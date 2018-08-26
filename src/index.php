@@ -20,7 +20,7 @@
             <div class="hero-unit">
                 <h1>AWS > ECS > Load Balanced with phpsdk installed .</h1>
 
-               
+                <p>Bayon created this with architecture1 stack.</p>               
                 <p>Thanks to.. </p>
                 <a href="https://github.com/awslabs/ecs-refarch-continuous-deployment">https://github.com/awslabs/ecs-refarch-continuous-deployment</a>
                 
