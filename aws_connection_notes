@@ -1,0 +1,7 @@
+
+How To SSH:
+ssh -i /path/my-key-pair.pem ec2-user@ec2-198-51-100-1.compute-1.amazonaws.com
+public DNS:
+archi-LoadB-VZISTRCXDSJG-1123049943.us-east-1.elb.amazonaws.com
+
+ssh -i aws_bayon_bigmac.pem ec2-user@archi-LoadB-VZISTRCXDSJG-1123049943.us-east-1.elb.amazonaws.com
