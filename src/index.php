@@ -18,10 +18,11 @@
     <body>
         <div class="container">
             <div class="hero-unit">
-                <h1>AWS > ECS > Load Balanced with phpsdk installed .</h1>
+            <h1>AWS ECS Load Balanced Autoscaling CICD
+                <h3>AWS > ECS > Load Balanced with phpsdk installed .</h3>
                <a href='./view.php'>api viewer</a>
- <p>really need this to work </p>
-                <p>Bayon created this with architecture1 stack.</p>               
+  
+                              
                 <p>Thanks to.. </p>
                 <a href="https://github.com/awslabs/ecs-refarch-continuous-deployment">https://github.com/awslabs/ecs-refarch-continuous-deployment</a>
                 
@@ -31,9 +32,8 @@
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
                         fclose($myfile);
                 ?>
-                <p>okay dokay!</p>
-                <a href="/PHPSlim/index.php">/PHPSlim/index.php could not make this connect to Slim framework.</a></br>
-                <a href="/info.php">phpinfo</a>
+                
+                 <a href="/info.php">phpinfo</a>
             </div>
         </div>
 
