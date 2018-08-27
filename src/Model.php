@@ -26,7 +26,7 @@ class Model {
 		//mysql_connect($this -> host, $this -> username, $this -> password);
 		//$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 
-		$con = mysqli_connect($this -> host, $this -> username, $this -> password, $this -> port);
+		$con = mysqli_connect($this -> host, $this -> username, $this -> password, $this-> database, $this -> port);
 		return $con;
 	}
 
