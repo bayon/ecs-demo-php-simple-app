@@ -20,23 +20,25 @@
             <div class="hero-unit">
             <h1>AWS ECS Load Balanced Autoscaling CICD
                 <h3>AWS > ECS > Load Balanced with phpsdk installed .</h3>
+                 <p>Reading Data from RDS:</p>
+                 <p>SELECT * FROM readreplica1.profiles;</p>
                  <?php 
-/*
-CONNECT TO DB: 
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_PHP.rds.html
-$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
-HOST: rm1s0tfcnbbs40p.cisgn95exije.us-east-1.rds.amazonaws.com
-DBName: readreplica1
-USER: readreplica1
-PASS: readreplica1
-*/
-include_once('Model.php'); 
-$model = new Model();
-$con = $model->connect();
-$sql = "SELECT * FROM readreplica1.profiles;";
-$data = $model->exe_sql($con,$sql ,"json");
-echo($data);
-?>
+                    /*
+                    CONNECT TO DB: 
+                    https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_PHP.rds.html
+                    $link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
+                    HOST: rm1s0tfcnbbs40p.cisgn95exije.us-east-1.rds.amazonaws.com
+                    DBName: readreplica1
+                    USER: readreplica1
+                    PASS: readreplica1
+                    */
+                    include_once('Model.php'); 
+                    $model = new Model();
+                    $con = $model->connect();
+                    $sql = "SELECT * FROM readreplica1.profiles;";
+                    $data = $model->exe_sql($con,$sql ,"json");
+                    echo($data);
+                    ?>
   
                               
                 <p>Thanks to.. </p>
