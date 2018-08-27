@@ -20,7 +20,7 @@
             <div class="hero-unit">
             <h1>AWS ECS Load Balanced Autoscaling CICD
                 <h3>AWS > ECS > Load Balanced with phpsdk installed .</h3>
-               <a href='./view.php'>api viewer</a>
+                 
   
                               
                 <p>Thanks to.. </p>
