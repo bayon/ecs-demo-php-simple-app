@@ -62,19 +62,27 @@
                                 console.log(data);
                             });
 
-                            
+                            function callback(data){
+                                console.log('the callback function ...');
+                                console.log(data);
+                            }
                             $("button").click(function(){
-                                $.post("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/index.php/profiles/insert",
-                                {
-                                    controller: "profiles",
-                                    action: "insert",
-                                    name: "name=Earny"
-                                   
-                                },
-                                function(data, status){
-                                    alert("Data: " + data + "\nStatus: " + status);
-                                    console.log(data);
+                                var data_obj={
+                                        'name': 'EarniyVeep'
+                                        
+                                };
+                                $.ajax({
+                                    url: "http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/index.php/profiles/insert",
+                                    type: "POST",
+                                    data: data_obj,
+                                    contentType: "application/json",
+                                    success: function (data) {
+                                        callback(data);
+                                        alert(data);
+                                    }
                                 });
+                                    
+                                
                             });
                     });
                     (function(){
