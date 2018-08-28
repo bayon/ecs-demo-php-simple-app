@@ -1,4 +1,10 @@
+
+
+
 <?php 
+
+header('Access-Control-Allow-Origin: *'); 
+
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
@@ -45,7 +51,7 @@ function profiles($controller='',$action='',$id='',$input=''){
             $sql="INSERT INTO `".$controller."` (`id`,`name`) VALUES (NULL,'".$input['name']."'); ";
             echo("<br>".$sql.'<br>');
             $result=mysqli_query($con,$sql);
-            echo('INSERT FROM POST AJAX CALL ? '.$result);
+            //echo('INSERT FROM POST AJAX CALL ? '.$result);
             break;
         case 'delete':
             # code...
