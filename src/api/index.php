@@ -40,7 +40,7 @@ if(isset($controller) && isset($action) ){
 
 
 function profiles($controller='',$action='',$id='',$input=''){
-    include_once('db_connect.php');
+    include_once('../db_connect.php');
     switch ($action) {
         case 'read':
             # code...
@@ -106,7 +106,7 @@ function profiles($controller='',$action='',$id='',$input=''){
 }
 
 function skills($controller='',$action='',$id='',$input=''){
-    include_once('db_connect.php');
+    include_once('../db_connect.php');
 
     switch ($action) {
         case 'insert':
