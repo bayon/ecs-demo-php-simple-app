@@ -2,12 +2,14 @@
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
-/*
+
 echo('<hr>');
 echo($method);
 echo('<hr>');
 print_r($request);
-*/
+
+die();
+
 $controller = $request[0];
 $action = $request[1];
 $id = $request[2];

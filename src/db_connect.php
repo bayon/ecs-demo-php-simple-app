@@ -1,13 +1,14 @@
 <?php 
 
-$HOST = "localhost";
-$USER = "root";
-$PASS = "root";
-$DB="getajob";
+$HOST   = "rm1s0tfcnbbs40p.cisgn95exije.us-east-1.rds.amazonaws.com";
+$USER   = "readreplica1";
+$PASS   = "readreplica1";
+$DB     = "readreplica1";
+$PORT   = "3306";
 
 $TABLE="profiles";
 
-$con=mysqli_connect($HOST,$USER,$PASS,$DB);
+$con=mysqli_connect($HOST,$USER,$PASS,$DB,$PORT);
 // Check connection
 if (mysqli_connect_errno())
 {
