@@ -11,7 +11,7 @@
 		<title>HTML DOC</title>
 	</head>
 	<body>
-    <form action="http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api.php" method="post">
+    <form action="http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/" method="post">
     <input type=hidden name='controller' value='profiles'/>
     <input type=hidden name='action' value='insert' />
         Name: <input type="text" name="name"><br>
@@ -24,12 +24,12 @@
 		$(document).ready(function(){
 			console.log('jquery is ready.');
            
-            $.get("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api.php/profiles/getAllSkills/1", function(data, status){
+            $.get("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/profiles/getAllSkills/1", function(data, status){
                     //alert("Data: " + data + "\nStatus: " + status);
                     console.log(data);
                 });
            
-                $.get("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api.php/profiles/read", function(data, status){
+                $.get("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/profiles/read", function(data, status){
                     //alert("Data: " + data + "\nStatus: " + status);
                     console.log(data);
                 });
