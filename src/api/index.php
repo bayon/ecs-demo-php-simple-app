@@ -3,29 +3,15 @@ $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
 
-echo('<hr>');
-echo($method);
-echo('<hr>');
-echo('<pre>');
-print_r($request);
-echo('</pre>');
-
- 
-
 $controller = $request[0];
 $action = $request[1];
 $id = $request[2];
 
-
-print_r($request);
-
-
-
+//print_r($request);
 
 if(isset($controller) && isset($action) ){
     switch ($controller) {
         case 'profiles':
-             
                 if(function_exists($controller)){
                     profiles($controller,$action,$id,$input);
                 }
@@ -57,9 +43,9 @@ function profiles($controller='',$action='',$id='',$input=''){
         case 'insert':
             # code...
             $sql="INSERT INTO `".$controller."` (`id`,`name`) VALUES (NULL,'".$input['name']."'); ";
-            //echo("<br>".$sql);
+            echo("<br>".$sql.'<br>');
             $result=mysqli_query($con,$sql);
-            echo('INSERT FROM POST AJAX CALL ? ');
+            echo('INSERT FROM POST AJAX CALL ? '.$result);
             break;
         case 'delete':
             # code...
