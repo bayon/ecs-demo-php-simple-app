@@ -10,7 +10,7 @@ echo('<pre>');
 print_r($request);
 echo('</pre>');
 
-die();
+ 
 
 $controller = $request[0];
 $action = $request[1];
