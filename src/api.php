@@ -6,7 +6,9 @@ $input = json_decode(file_get_contents('php://input'),true);
 echo('<hr>');
 echo($method);
 echo('<hr>');
+echo('<pre>');
 print_r($request);
+echo('</pre>');
 
 die();
 
