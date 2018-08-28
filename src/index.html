@@ -46,7 +46,7 @@
                      
                     <input type="submit"   value ="insert">
                 </form>
-                    
+                    <button>insert</button>
                     <script>
             
                     $(document).ready(function(){
@@ -61,19 +61,21 @@
                                 //alert("Data: " + data + "\nStatus: " + status);
                                 console.log(data);
                             });
-                           /* $("button").click(function(){
-                                $.post("http://localhost:8888/getajob/api.php/profiles/insert",
+
+                            
+                            $("button").click(function(){
+                                $.post("http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/index.php/profiles/insert",
                                 {
                                     controller: "profiles",
                                     action: "insert",
-                                    name: "Earny"
+                                    name: "name=Earny"
                                    
                                 },
                                 function(data, status){
                                     alert("Data: " + data + "\nStatus: " + status);
                                     console.log(data);
                                 });
-                            });*/
+                            });
                     });
                     (function(){
                         console.log('modular design pattern');

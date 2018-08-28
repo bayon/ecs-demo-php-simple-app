@@ -48,6 +48,7 @@ function profiles($controller='',$action='',$id='',$input=''){
             break;
         case 'insert':
             # code...
+            print_r($input);
             $sql="INSERT INTO `".$controller."` (`id`,`name`) VALUES (NULL,'".$input['name']."'); ";
             echo("<br>".$sql.'<br>');
             $result=mysqli_query($con,$sql);
