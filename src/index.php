@@ -35,7 +35,7 @@
                     include_once('Model.php'); 
                     $model = new Model();
                     $con = $model->connect();
-                    $sql = "SELECT * FROM readreplica1.profiles;";
+                    $sql = "SELECT * FROM 'readreplica1.profiles' ;";
                     $data = $model->exe_sql($con,$sql ,"json");
                     echo($data);
                     ?>
