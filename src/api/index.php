@@ -14,8 +14,8 @@ $input = json_decode(file_get_contents('php://input'),true);
 $controller = $request[0];
 $action = $request[1];
 $id = $request[2];
-
-//print_r($request);
+echo('print request var');
+print_r($request);
 
 if(isset($controller) && isset($action) ){
     switch ($controller) {
@@ -50,7 +50,7 @@ function profiles($controller='',$action='',$id='',$input=''){
             break;
         case 'insert':
             # code...
-            print_r($input);
+            //print_r($input);
             $sql="INSERT INTO `".$controller."` (`id`,`name`) VALUES (NULL,'".$input['name']."'); ";
             echo("<br>".$sql.'<br>');
             $result=mysqli_query($con,$sql);

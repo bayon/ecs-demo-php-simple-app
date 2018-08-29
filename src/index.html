@@ -71,13 +71,14 @@
                                         'name': 'EarniyVeep'
                                         
                                 };
+                                console.log(data_obj);
                                 $.ajax({
                                     url: "http://arch1-loadb-t76ar9tmp5lx-828905131.us-east-1.elb.amazonaws.com/api/index.php/profiles/insert",
                                     type: "POST",
                                     data: data_obj,
                                     contentType: "application/json",
                                     success: function (data) {
-                                        callback(data);
+                                        //callback(data);
                                         alert(data);
                                     }
                                 });
