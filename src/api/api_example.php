@@ -1,40 +1,31 @@
 <?php
-
-header('Access-Control-Allow-Origin: *'); 
-header("Access-Control-Allow-Headers: Content-Type");
-header('Content-Type: application/json');
-
 //https://www.leaseweb.com/labs/2015/10/creating-a-simple-rest-api-in-php/
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
-echo('<hr>');
+/*echo('<hr>');
 echo($method);
 echo('<hr>');
 print_r($request);
 echo('<hr>');
 echo($input);
-die();
-/*
+die();*/
 // connect to the mysql database
 $link = mysqli_connect('localhost', 'root', 'root', 'getajob');
 mysqli_set_charset($link,'utf8');
-*/
+
 // retrieve the table and key from the path
 $table = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
 $key = array_shift($request)+0;
 
 // escape the columns and values from the input object
 $columns = preg_replace('/[^a-z0-9_]+/i','',array_keys($input));
-echo('columns:');
-print_r($columns);
 $values = array_map(function ($value) use ($link) {
   if ($value===null) return null;
   return mysqli_real_escape_string($link,(string)$value);
 },array_values($input));
-echo('values:');
-print_r($values);
+
 // build the SET part of the SQL command
 $set = '';
 for ($i=0;$i<count($columns);$i++) {
@@ -45,17 +36,15 @@ for ($i=0;$i<count($columns);$i++) {
 // create SQL based on HTTP method
 switch ($method) {
   case 'GET':
-    //$sql = "select * from `$table`".($key?" WHERE id=$key":''); break;
-    echo('get');
+    $sql = "select * from `$table`".($key?" WHERE id=$key":''); break;
   case 'PUT':
-    //$sql = "update `$table` set $set where id=$key"; break;
+    $sql = "update `$table` set $set where id=$key"; break;
   case 'POST':
-    //$sql = "insert into `$table` set $set"; break;
-    echo('POST');
+    $sql = "insert into `$table` set $set"; break;
   case 'DELETE':
-    //$sql = "delete `$table` where id=$key"; break;
+    $sql = "delete `$table` where id=$key"; break;
 }
-/*
+
 // excecute SQL statement
 $result = mysqli_query($link,$sql);
 
@@ -80,7 +69,7 @@ if ($method == 'GET') {
 
 // close mysql connection
 mysqli_close($link);
-*/
+
 /*
 Running
 Save this file as “api.php” in your (Apache) document root and call it using:
