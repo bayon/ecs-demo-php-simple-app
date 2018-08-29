@@ -9,13 +9,13 @@ header('Content-Type: application/json');
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 $input = json_decode(file_get_contents('php://input'),true);
-/*echo('<hr>');
+echo('<hr>');
 echo($method);
 echo('<hr>');
 print_r($request);
 echo('<hr>');
 echo($input);
-die();*/
+die();
 /*
 // connect to the mysql database
 $link = mysqli_connect('localhost', 'root', 'root', 'getajob');
