@@ -16,6 +16,8 @@ $action = $request[1];
 $id = $request[2];
 echo('print request var');
 print_r($request);
+echo('print input var');
+print_r($input);
 
 if(isset($controller) && isset($action) ){
     switch ($controller) {
